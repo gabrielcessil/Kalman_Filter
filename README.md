@@ -97,14 +97,14 @@ This is performed by the provided class as the method estimation:
 
 ```matlab
 function obj = estimate(obj, y, u)
-            obj.xhat    = obj.f(obj.xhat, u);
-            obj.P       = obj.A*obj.P*obj.A.' + obj.Gamma*obj.Qv*obj.Gamma.';
-            obj.e       = y-obj.C*obj.xhat;
+    obj.xhat    = obj.f(obj.xhat, u);
+    obj.P       = obj.A*obj.P*obj.A.' + obj.Gamma*obj.Qv*obj.Gamma.';
+    obj.e       = y-obj.C*obj.xhat;
 
-            obj.K       = obj.P*obj.C.' / (obj.C*obj.P*obj.C.' + obj.Rv);
-            obj.xhat    = obj.xhat + obj.K*(obj.e); 
-            obj.P       = obj.P - obj.K*obj.C*obj.P; 
-        end
+    obj.K       = obj.P*obj.C.' / (obj.C*obj.P*obj.C.' + obj.Rv);
+    obj.xhat    = obj.xhat + obj.K*(obj.e); 
+    obj.P       = obj.P - obj.K*obj.C*obj.P; 
+end
 ```
 
 ## Usage
