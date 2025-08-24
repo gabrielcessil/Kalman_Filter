@@ -40,9 +40,9 @@ The project demonstrates how to estimate both **angular position** and **angular
 
 The pendulum is modeled as:
 
-\[
+$$
 \ddot{\theta} = -\frac{g}{l} \sin(\theta) + \frac{1}{ml^2}w(t)
-\]
+$$
 
 where:
 - \(\theta\): angular position  
