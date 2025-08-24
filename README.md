@@ -69,8 +69,14 @@ $$
 Correction:
 
 $$
-K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1} \\\\
-\hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (y_k - C \hat{x}_{k|k-1}) \\\\
+K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
+$$
+<br>
+$$
+\hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (y_k - C \hat{x}_{k|k-1})
+$$
+<br>
+$$
 P_{k|k} = (I - K_k C) P_{k|k-1} 
 $$
 
