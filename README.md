@@ -92,7 +92,23 @@ K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 ```math
 P_{k|k} = (I - K_k C) P_{k|k-1}  
 ```
+---
 
+## Usage
+
+1.  Simulation Setup: Define simulated time and sampling period.
+2.  System Initilization: Define initial states (ex: angular position and velocity), initial estimation and covariance matrix
+3.  Plant Setup: Define the state-space model of the plant (ex: pendulum equations) with process and measurement noise
+4.  Create the 'KalmanFilter' class object
+5.  Simulate one step of the plant model with noise
+6.  Estimate the states and repeat step 5.
+
+
+```matlab
+filter = filter.estimate(ang_meas(k), u);
+xhat   = filter.xhat;
+```
+   
 
 ---
 
@@ -112,29 +128,13 @@ The script generates the following plots:
 4.  **Residuals**:  
     Filter residuals over time.
 
----
 
-## Usage
-
-1.  Simulation Setup: Define simulated time and sampling period.
-2.  System Initilization: Define initial states (ex: angular position and velocity), initial estimation and covariance matrix
-3.  Plant Setup: Define the state-space model of the plant (ex: pendulum equations) with process and measurement noise
-4.  Create the 'KalmanFilter' class object
-5.  Simulate one step of the plant model with noise
-6.  Estimate the states and repeat step 5.
-
-
-```matlab
-filter = filter.estimate(ang_meas(k), u);
-xhat    = filter.xhat;
-```
-   
 
 ---
 
 ## Requirements
 
-- MATLAB (tested on R2021a or later)  
+- MATLAB (tested on web version in August 2025)  
 - Control System Toolbox (for `ss` and `c2d`)  
 
 ---
