@@ -74,14 +74,13 @@ Linearized system matrices are derived and discretized for the filter.
 P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
 ```
 
-Correction:
 - Calculate the Kalman gains
 
 ```math
 K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 ```
 
-- New estimation
+- Correction of Prediction
 
 ```math
 \hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (y_k - C \hat{x}_{k|k-1})
@@ -93,6 +92,20 @@ K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 P_{k|k} = (I - K_k C) P_{k|k-1}  
 ```
 ---
+
+This is performed by the provided class as the method estimation:
+
+```matlab
+function obj = estimate(obj, y, u)
+            obj.xhat    = obj.f(obj.xhat, u);
+            obj.P       = obj.A*obj.P*obj.A.' + obj.Gamma*obj.Qv*obj.Gamma.';
+            obj.e       = y-obj.C*obj.xhat;
+
+            obj.K       = obj.P*obj.C.' / (obj.C*obj.P*obj.C.' + obj.Rv);
+            obj.xhat    = obj.xhat + obj.K*(obj.e); 
+            obj.P       = obj.P - obj.K*obj.C*obj.P; 
+        end
+```
 
 ## Usage
 
