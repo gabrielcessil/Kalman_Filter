@@ -59,15 +59,15 @@ Linearized system matrices are derived and discretized for the filter.
 
 Prediction based on model
 
-$$
+```math
 \hat{x}_{k|k-1} = A \hat{x}_{k-1|k-1} + Bu
-$$
+```
 
 Estimation of Covariance Matrix
 
-$$
+```math
 P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
-$$
+```
 
 Correction:
 Calculate the Kalman gains
