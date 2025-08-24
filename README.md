@@ -45,17 +45,17 @@ $$
 $$
 
 where:
-- $$\(\theta\)$$: angular position  
-- $$\(g\)$$: gravitational acceleration  
-- $$\(l\)$$: pendulum length  
-- $$\(w(t)\)$$: process noise  
+- $\(\theta\)$: angular position  
+- $\(g\)$: gravitational acceleration  
+- $\(l\)$: pendulum length  
+- $\(w(t)\)$: process noise  
 
 Linearized system matrices are derived and discretized for the filter.
 
 ### Noise Modeling
 
-- **Process noise covariance**: $$\(Q_v = 10^{-3}\)$$ 
-- **Measurement noise covariance**: $$\(R_v = 10^{-3}\)$$  
+- **Process noise covariance**: $\(Q_v = 10^{-3}\)$ 
+- **Measurement noise covariance**: $\(R_v = 10^{-3}\)$  
 
 ### Kalman Filter Equations
 
@@ -64,6 +64,7 @@ Prediction:
 $$
 \hat{x}_{k|k-1} = A \hat{x}_{k-1|k-1} + Bu
 $$
+<!-- -->
 
 $$
 P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
@@ -74,10 +75,12 @@ Correction:
 $$
 K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 $$
+<!-- -->
 
 $$
 \hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (y_k - C \hat{x}_{k|k-1})
 $$
+<!-- -->
 
 $$
 P_{k|k} = (I - K_k C) P_{k|k-1}
