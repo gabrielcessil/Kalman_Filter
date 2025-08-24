@@ -43,7 +43,7 @@ The pendulum is modeled as:
 ```
 
 where:
-- `$\theta$`: angular position  
+- $`\theta$`$: angular position  
 - `g`: gravitational acceleration  
 - `l`: pendulum length  
 - `w(t)`: process noise  
