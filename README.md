@@ -1,4 +1,4 @@
-# Kalman Filter for Pendulum State Estimation
+# Kalman Filter: An Example with Single Pendulum State Estimation
 
 This repository contains a MATLAB implementation of a **Kalman Filter** applied to the **state estimation of a simple pendulum**.  
 The project demonstrates how to estimate both **angular position** and **angular velocity** of a pendulum subject to measurement and process noise.
