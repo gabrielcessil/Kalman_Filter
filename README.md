@@ -116,14 +116,19 @@ The script generates the following plots:
 
 ## Usage
 
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/yourusername/kalman-pendulum.git](https://github.com/yourusername/kalman-pendulum.git)
-    ```
-2.  Open MATLAB and run:
-    ```matlab
-    main
-    ```
+1.  Simulation Setup: Define simulated time and sampling period.
+2.  System Initilization: Define initial states (ex: angular position and velocity), initial estimation and covariance matrix
+3.  Plant Setup: Define the state-space model of the plant (ex: pendulum equations) with process and measurement noise
+4.  Create the 'KalmanFilter' class object
+5.  Simulate one step of the plant model with noise
+6.  Estimate the states and repeat step 5.
+
+
+```matlab
+filter = filter.estimate(ang_meas(k), u);
+xhat    = filter.xhat;
+```
+   
 
 ---
 
