@@ -38,9 +38,9 @@ The project demonstrates how to estimate both **angular position** and **angular
 
 The pendulum is modeled as:
 
-$$
+```math
 \ddot{\theta} = -\frac{g}{l} \sin(\theta) + \frac{1}{ml^2}w(t)
-$$
+```
 
 where:
 - '$\theta$': angular position  
@@ -52,37 +52,37 @@ Linearized system matrices are derived and discretized for the filter.
 
 ### Noise Modeling
 
-- **Process noise covariance**: '$Q_v = 10^{-3}$'
-- **Measurement noise covariance**: '$R_v = 10^{-3}$'  
+- **Process noise covariance**: $Q_v = 10^{-3}$
+- **Measurement noise covariance**: $R_v = 10^{-3}$  
 
 ### Kalman Filter Equations
 
-Prediction based on model
+- Prediction based on model
 
 ```math
 \hat{x}_{k|k-1} = A \hat{x}_{k-1|k-1} + Bu
 ```
 
-Estimation of Covariance Matrix
+- Estimation of Covariance Matrix
 
 ```math
 P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
 ```
 
 Correction:
-Calculate the Kalman gains
+- Calculate the Kalman gains
 
 ```math
 K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 ```
 
-New estimation
+- New estimation
 
 ```math
 \hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (y_k - C \hat{x}_{k|k-1})
 ```
 
-Correction the Covariance matrix
+- Correction of the Covariance matrix
 
 ```math
 P_{k|k} = (I - K_k C) P_{k|k-1}  
