@@ -44,9 +44,9 @@ The pendulum is modeled as:
 
 where:
 - '$\theta$': angular position  
-- '$g$': gravitational acceleration  
-- '$l$': pendulum length  
-- '$w(t)$': process noise  
+- 'g': gravitational acceleration  
+- `$l$`: pendulum length  
+- `w(t)`: process noise  
 
 Linearized system matrices are derived and discretized for the filter.
 
