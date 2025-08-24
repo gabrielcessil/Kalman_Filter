@@ -70,6 +70,7 @@ P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
 $$
 
 Correction:
+
 $$
 K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
 $$
