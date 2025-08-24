@@ -19,16 +19,14 @@ The project demonstrates how to estimate both **angular position** and **angular
 
 ## Repository Structure
 
-- **`main.m`**  
-  Main script that:
+- **`main.m`** Main script that:
   - Defines pendulum dynamics.  
   - Configures noise models.  
   - Runs the simulation.  
   - Applies the Kalman Filter.  
   - Generates plots comparing real, measured, and estimated states.  
 
-- **`KalmanFilter.m`**  
-  MATLAB class implementing a discrete-time Kalman Filter with methods for:
+- **`KalmanFilter.m`** MATLAB class implementing a discrete-time Kalman Filter with methods for:
   - Prediction and correction steps.  
   - Updating state estimates, covariance matrices, Kalman gain, and residuals.  
 
@@ -54,8 +52,8 @@ Linearized system matrices are derived and discretized for the filter.
 
 ### Noise Modeling
 
-- **Process noise covariance**: '$Q_v = 10^{-3}$' 
-- **Measurement noise covariance**: '$R_v = 10^{-3}$  
+- **Process noise covariance**: '$Q_v = 10^{-3}$'
+- **Measurement noise covariance**: '$R_v = 10^{-3}$'  
 
 ### Kalman Filter Equations
 
@@ -72,7 +70,7 @@ P_{k|k-1} = A P_{k-1|k-1} A^T + \Gamma Q_v \Gamma^T
 $$
 
 Correction:
-Calulate the Kalman gains
+Calculate the Kalman gains
 
 $$
 K_k = P_{k|k-1} C^T \left(C P_{k|k-1} C^T + R_v\right)^{-1}
@@ -87,7 +85,7 @@ $$
 Correction the Covariance matrix
 
 $$
-P_{k|k} = (I - K_k C) P_{k|k-1} 
+P_{k|k} = (I - K_k C) P_{k|k-1}  
 $$
 
 
@@ -97,30 +95,30 @@ $$
 
 The script generates the following plots:
 
-1. **Angle Estimation**:  
-   Comparison of real angle, noisy measurements, and Kalman estimates.
+1.  **Angle Estimation**:  
+    Comparison of real angle, noisy measurements, and Kalman estimates.
 
-2. **Angular Velocity Estimation**:  
-   Comparison of real angular velocity, noisy derivative-based measurements, and Kalman estimates.
+2.  **Angular Velocity Estimation**:  
+    Comparison of real angular velocity, noisy derivative-based measurements, and Kalman estimates.
 
-3. **Kalman Gain Evolution**:  
-   Log-scaled evolution of Kalman gain matrix elements.
+3.  **Kalman Gain Evolution**:  
+    Log-scaled evolution of Kalman gain matrix elements.
 
-4. **Residuals**:  
-   Filter residuals over time.
+4.  **Residuals**:  
+    Filter residuals over time.
 
 ---
 
 ## Usage
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/kalman-pendulum.git
-   ```
-2. Open MATLAB and run:
-   ```matlab
-   main
-   ```
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/yourusername/kalman-pendulum.git](https://github.com/yourusername/kalman-pendulum.git)
+    ```
+2.  Open MATLAB and run:
+    ```matlab
+    main
+    ```
 
 ---
 
@@ -134,4 +132,4 @@ The script generates the following plots:
 ## References
 
 - R.E. Kalman, *A New Approach to Linear Filtering and Prediction Problems*, Journal of Basic Engineering, 1960.  
-- S. Haykin, *Kalman Filtering and Neural Networks*, Wiley, 2001.  
+- S. Haykin, *Kalman Filtering and Neural Networks*, Wiley, 2001.
